@@ -68,7 +68,7 @@ export default function Competences() {
         {slides.map((slide, index) => (
           <div
             key={index}
-            ref={(el) => (slidesRef.current[index] = el!)}
+            ref={(el) => { if (el) slidesRef.current[index] = el; }}
             className="mySlides"
             style={{ display: index === 0 ? 'block' : 'none' }}
           >
