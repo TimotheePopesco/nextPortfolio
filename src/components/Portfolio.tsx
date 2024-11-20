@@ -126,7 +126,14 @@ return (
               </div>
               {/* Affiche l’image de poster si c’est une vidéo, sinon l’image normale */}
               {item.imgSrc.endsWith('.mp4') ? (
-                <Image className="img-fluid" src={item.posterSrc} alt={item.alt} width={300} height={300} layout="responsive" />
+                <Image
+                className="img-fluid"
+                src={item.posterSrc as string}  // Type assertion to ensure it's treated as a string
+                alt={item.alt}
+                width={300}
+                height={300}
+                layout="responsive"
+              />
               ) : (
                 <Image className="img-fluid" src={item.imgSrc} alt={item.alt} width={300} height={300} layout="responsive" />
               )}
